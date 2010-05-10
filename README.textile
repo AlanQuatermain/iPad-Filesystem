@@ -1,0 +1,17 @@
+h1=. iPad Filesystem
+
+p=. Version 1.0 -- 10 May 2010
+
+p=. By "Jim Dovey":mailto:jimdovey@mac.com <br />
+
+h2=. Licensing
+
+Released under the New BSD License. See 'LICENSE' for more information.
+
+h3. About
+
+A simple application which implements a filesystem browser for the iPad, using a UISplitView to do its work.
+
+h3. Usage
+
+In the overview pane, select an item to view its filesystem data (from *NSFileManager*) in the detail pane. To advance into a folder, click the blue disclosure button to the right of its name in the overview table.
