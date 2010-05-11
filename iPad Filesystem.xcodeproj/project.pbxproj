@@ -18,6 +18,7 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		382EA9EB11985F4F004DA8F9 /* UIAlertView+NSError.m in Sources */ = {isa = PBXBuildFile; fileRef = 382EA9EA11985F4F004DA8F9 /* UIAlertView+NSError.m */; };
 		382EAA061198700C004DA8F9 /* CustomFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 382EAA051198700C004DA8F9 /* CustomFormatters.m */; };
+		382EAE20119A0116004DA8F9 /* DocumentInteractionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 382EAE1F119A0116004DA8F9 /* DocumentInteractionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		382EA9EA11985F4F004DA8F9 /* UIAlertView+NSError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+NSError.m"; sourceTree = "<group>"; };
 		382EAA041198700C004DA8F9 /* CustomFormatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFormatters.h; sourceTree = "<group>"; };
 		382EAA051198700C004DA8F9 /* CustomFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFormatters.m; sourceTree = "<group>"; };
+		382EAE1E119A0116004DA8F9 /* DocumentInteractionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentInteractionView.h; sourceTree = "<group>"; };
+		382EAE1F119A0116004DA8F9 /* DocumentInteractionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentInteractionView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* iPad_Filesystem-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPad_Filesystem-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +68,8 @@
 				28042008108E984D000629CD /* RootViewController.m */,
 				28042009108E984D000629CD /* DetailViewController.h */,
 				2804200A108E984D000629CD /* DetailViewController.m */,
+				382EAE1E119A0116004DA8F9 /* DocumentInteractionView.h */,
+				382EAE1F119A0116004DA8F9 /* DocumentInteractionView.m */,
 				382EA9E911985F4F004DA8F9 /* UIAlertView+NSError.h */,
 				382EA9EA11985F4F004DA8F9 /* UIAlertView+NSError.m */,
 				382EAA041198700C004DA8F9 /* CustomFormatters.h */,
@@ -189,6 +194,7 @@
 				2804200C108E984D000629CD /* DetailViewController.m in Sources */,
 				382EA9EB11985F4F004DA8F9 /* UIAlertView+NSError.m in Sources */,
 				382EAA061198700C004DA8F9 /* CustomFormatters.m in Sources */,
+				382EAE20119A0116004DA8F9 /* DocumentInteractionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

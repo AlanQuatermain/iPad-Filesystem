@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "RootViewController.h"
 #import "CustomFormatters.h"
+#import "DocumentInteractionView.h"
 
 enum
 {
@@ -41,6 +42,7 @@ static NSFormatter * gBooleanFormatter = nil;
 @implementation DetailViewController
 
 @synthesize toolbar, popoverController, detailItem, detailTableView, titleBarItem;
+@synthesize documentInteractionController=_documentController;
 
 + (void) initialize
 {
@@ -120,7 +122,7 @@ static NSFormatter * gBooleanFormatter = nil;
 	[_tableData addObject: [NSMutableArray arrayWithCapacity: [PermissionDetailKeys count]]];
 	[_tableData addObject: [NSMutableArray arrayWithCapacity: [FinderInfoKeys count]]];
 	
-	if ( detailItem == [NSNull null] )
+	if ( (id)detailItem == [NSNull null] )
 	{
 		[self.detailTableView reloadData];
 		return;
@@ -171,9 +173,18 @@ static NSFormatter * gBooleanFormatter = nil;
 		}
 	}
 	
+	if ( self.documentInteractionController != nil )
+	{
+		self.documentInteractionController.delegate = self;
+		
+		DocumentInteractionView * header = [[DocumentInteractionView alloc] initWithFrame: CGRectMake(0.0, 0.0, self.detailTableView.bounds.size.width, 128.0)];
+		header.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		header.documentInteractionController = self.documentInteractionController;
+		self.detailTableView.tableHeaderView = header;
+	}
+	
 	[self.detailTableView reloadData];
 }
-
 
 #pragma mark -
 #pragma mark Split view support
@@ -266,10 +277,24 @@ static NSFormatter * gBooleanFormatter = nil;
 
 - (NSString *) tableView: (UITableView *) tableView titleForFooterInSection: (NSInteger) section
 {
-	if ( (section == kNumSections-1) && (detailItem == [NSNull null]) )
+	if ( (section == kNumSections-1) && ((id)detailItem == [NSNull null]) )
 		return ( NSLocalizedString(@"No Information Available", @"") );
 	
 	return ( nil );
+}
+
+#pragma mark -
+#pragma mark Document Interaction Controller Delegate
+
+- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller
+{
+	return ( self );
+}
+
+- (UIView *)documentInteractionControllerViewForPreview:(UIDocumentInteractionController *)controller
+{
+	DocumentInteractionView * aView = (DocumentInteractionView *)self.detailTableView.tableHeaderView;
+	return ( aView.previewStartView );
 }
 
 #pragma mark -
@@ -330,6 +355,7 @@ static NSFormatter * gBooleanFormatter = nil;
     [detailItem release];
 	[detailTableView release];
 	[_tableData release];
+	[_documentController release];
     [super dealloc];
 }
 

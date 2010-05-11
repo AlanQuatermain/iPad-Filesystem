@@ -139,8 +139,9 @@
     /*
      When a row is selected, set the detail view controller's detail item to the item associated with the selected row.
      */
-    self.detailViewController.detailItem = [_attributes objectAtIndex: indexPath.row];
+	self.detailViewController.documentInteractionController = [UIDocumentInteractionController interactionControllerWithURL: [NSURL fileURLWithPath: [self.folderPath stringByAppendingPathComponent: [_folderContents objectAtIndex: indexPath.row]]]];
 	self.detailViewController.title = [_folderContents objectAtIndex: indexPath.row];
+    self.detailViewController.detailItem = [_attributes objectAtIndex: indexPath.row];
 }
 
 - (void) tableView: (UITableView *) aTableView accessoryButtonTappedForRowWithIndexPath: (NSIndexPath *) indexPath
